@@ -70,3 +70,7 @@ https://www.v2ex.com/t/248273
         复制本机多个端口发出的 tcp 包：
 
     ./net_speeder venet0 "(tcp src port 端口号1 or 端口号2 or 端口号3) and src host 本机 IP 地址" 
+    
+    （注：本机 IP 地址不要用 127.0.0.1 ，可用 hostname -I | tr ' ' '\n' | grep '[0-9]' | grep -v '127\.0\.0\.'来获取）
+    
+    via： http://youdemeide.blogspot.com/2016/01/net-speeder.html
