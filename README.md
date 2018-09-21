@@ -43,3 +43,30 @@ Linux Cooked interface使用编译（venetX，OpenVZ）： sh build.sh -DCOOKED 
 参数：./net_speeder 网卡名 加速规则（bpf规则）
 
 最简单用法： # ./net_speeder venet0 "ip" 加速所有ip协议数据 
+
+ net-speeder的bpf规则 bpf rules for net-speeder
+net-speeder 的使用方法为
+
+    ./net_speeder 网卡名 加速规则
+
+其中加速规则采用 bpf 规则，一般常用下面规则来启动
+
+    ./net_speeder venet0 "ip" 
+
+    ./net_speeder venet0 "tcp"
+
+这样可能存在安全隐患，可用 iptables 来处理，但并未从根源来解决
+https://www.v2ex.com/t/248273 
+
+其实可以用 bpf 规则使之只复制发出的包，下面 3 条规则供参考
+        复制本机发出的 tcp 包：
+
+    ./net_speeder venet0 "tcp and src host 本机 IP 地址" 
+
+        复制本机某个端口发出的 tcp 包：
+
+    ./net_speeder venet0 "tcp src port 端口号 and src host 本机 IP 地址"
+
+        复制本机多个端口发出的 tcp 包：
+
+    ./net_speeder venet0 "(tcp src port 端口号1 or 端口号2 or 端口号3) and src host 本机 IP 地址" 
