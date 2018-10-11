@@ -42,8 +42,10 @@ Linux Cooked interface使用编译（venetX，OpenVZ）： sh build.sh -DCOOKED 
 
 参数：./net_speeder 网卡名 加速规则（bpf规则）
 
-最简单用法： # ./net_speeder venet0 "ip" 加速所有ip协议数据 
+最简单用法： # ./net_speeder venet0 "ip" 加速所有ip协议数据。
 
+
+以下是高级点的用法：
  net-speeder的bpf规则 bpf rules for net-speeder
 net-speeder 的使用方法为
 
