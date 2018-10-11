@@ -75,4 +75,4 @@ https://www.v2ex.com/t/248273
     
     （注：本机 IP 地址不要用 127.0.0.1 ，可用 hostname -I | tr ' ' '\n' | grep '[0-9]' | grep -v '127\.0\.0\.'来获取）
     
-    via： http://youdemeide.blogspot.com/2016/01/net-speeder.html
+    via： http://youdemeide.blogspot.com/2016/01/net-speeder.html and http://www.ferrisxu.com/WinPcap/html/group__language.html
